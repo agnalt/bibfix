@@ -7,7 +7,7 @@ import os
 import sys
 
 # --- Configuration ---
-DEFAULT_MAX_AUTHORS = 3  # Maximum authors before 'and others'
+DEFAULT_MAX_AUTHORS = 4  # Maximum authors before 'and others'
 UNNECESSARY_FIELDS = {
     'abstract', 'file', 'keywords', 'mendeley-groups', 'comment',
     'url', 'urldate', 'doi', 'issn', 'isbn', 'note', 'month', 'day',
