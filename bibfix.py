@@ -7,7 +7,7 @@ import os
 import sys
 
 # --- Configuration ---
-DEFAULT_MAX_AUTHORS = 4  # Maximum authors before 'and others'
+DEFAULT_MAX_AUTHORS = -1  # Maximum authors before 'and others'
 UNNECESSARY_FIELDS = {
     'abstract', 'file', 'keywords', 'mendeley-groups', 'comment',
     'url', 'urldate', 'doi', 'issn', 'isbn', 'note', 'month', 'day',
@@ -32,7 +32,7 @@ ESSENTIAL_FIELDS = {
 # --- End Configuration ---
 
 def truncate_authors(authors_string: str, max_authors: int) -> str:
-    if not authors_string:
+    if not authors_string or max_authors < 0:
         return authors_string
     authors = [a.strip() for a in authors_string.split(' and ')]
     if len(authors) > max_authors:
